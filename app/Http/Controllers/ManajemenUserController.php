@@ -17,7 +17,7 @@ class ManajemenUserController extends Controller
     public function index()
     {
         return view('data-pengguna.index', [
-            'penggunas' => User::all(),
+            'penggunas' => User::with('role')->get(),
             'roles'     => Role::all()
         ]);
     }
